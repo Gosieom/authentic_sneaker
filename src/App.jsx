@@ -13,6 +13,7 @@ import Women from "./Components/Pages/Women";
 import Kids from "./Components/Pages/Kids";
 import Hero from "./Components/Hero";
 import './index.css';
+import Home from "./Components/Pages/Home";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/checkout" element={<Checkout />} />
+         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,10 +1,7 @@
 import React from "react";
 import Hero from "../Hero";
-import Offers from "../Offers";
-import BestSellers from "../BestSellers";
-import Contact from "../Contact";
-import Feedback from "../Feedback";
 import { Link } from "react-router-dom";
+import Offers from "./Offers";
 
 const Home = () => {
   return (
