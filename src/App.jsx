@@ -11,16 +11,21 @@ import Checkout from './Components/Pages/Checkout';
 import Men from "./Components/Pages/Men";
 import Women from "./Components/Pages/Women";
 import Kids from "./Components/Pages/Kids";
+import Hero from "./Components/Hero";
+import './index.css';
 
 function App() {
- 
   const [cartCount, setCartCount] = useState(0);
 
   return (
     <BrowserRouter>
       <Navbar cartCount={cartCount} />
       <Routes>
-        <Route path="/" element={<Shop />} />
+        {/* Use Hero as Home page */}
+        <Route path="/" element={<Hero />} />
+
+        {/* Other routes */}
+        <Route path="/shop" element={<Shop />} />
         <Route path="/category/men" element={<Men />} />
         <Route path="/category/women" element={<Women />} />
         <Route path="/category/kids" element={<Kids />} />
