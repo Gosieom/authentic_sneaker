@@ -21,10 +21,10 @@ function App() {
     <BrowserRouter>
       <Navbar cartCount={cartCount} />
       <Routes>
-        {/* Use Hero as Home page */}
+        
         <Route path="/" element={<Hero />} />
 
-        {/* Other routes */}
+        
         <Route path="/shop" element={<Shop />} />
         <Route path="/category/men" element={<Men />} />
         <Route path="/category/women" element={<Women />} />
