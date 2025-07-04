@@ -1,23 +1,16 @@
+// src/Components/Pages/Offers.jsx
 import React from "react";
-import Hero from "../Hero";
-import { Link } from "react-router-dom";
-import Offers from "./Offers";
 
-const Home = () => {
+
+const Offers = () => {
   return (
-    <div>
-      <Hero />
-      <Offers />
-      <BestSellers />
-      <Contact />
-      <Feedback />
-      <div className="text-center py-6">
-        <Link to="/admin" className="text-blue-600 underline font-semibold">
-          Go to Admin Panel
-        </Link>
-      </div>
-    </div>
+    <section className="py-16 px-6 bg-white text-center">
+      <h2 className="text-4xl font-bold mb-4">🎉 Mega Offers Coming Soon!</h2>
+      <p className="text-gray-600 text-lg">
+        Stay tuned for exciting discounts and limited-time sneaker deals!
+      </p>
+    </section>
   );
 };
 
-export default Home;
+export default Offers;
