@@ -1,16 +1,33 @@
-// src/Components/Pages/Offers.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Offers from "../Offers"; // Path is correct if both are in same folder
 
+const Home = () => {
+  const [showOffer, setShowOffer] = useState(false);
 
-const Offers = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowOffer(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="py-16 px-6 bg-white text-center">
-      <h2 className="text-4xl font-bold mb-4">🎉 Mega Offers Coming Soon!</h2>
-      <p className="text-gray-600 text-lg">
-        Stay tuned for exciting discounts and limited-time sneaker deals!
-      </p>
-    </section>
+    <div>
+      <div className="min-h-[120vh] flex flex-col items-center justify-center">
+        <h1 className="text-5xl font-bold text-gray-800 mb-4">Welcome to Authentic Sneaker</h1>
+        <p className="text-lg text-gray-600">Scroll down to reveal offers</p>
+      </div>
+
+      {/* Slide-up Offer Section */}
+      <div className={`transition-all duration-700 ease-out transform ${
+        showOffer ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+      }`}>
+        <Offers />
+      </div>
+    </div>
   );
 };
 
-export default Offers;
+export default Home;

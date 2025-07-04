@@ -22,10 +22,15 @@ function App() {
     <BrowserRouter>
       <Navbar cartCount={cartCount} />
       <Routes>
-        
-        <Route path="/" element={<Hero />} />
-
-        
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Home />
+            </>
+          }
+        />
         <Route path="/shop" element={<Shop />} />
         <Route path="/category/men" element={<Men />} />
         <Route path="/category/women" element={<Women />} />
@@ -35,7 +40,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/checkout" element={<Checkout />} />
-         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
