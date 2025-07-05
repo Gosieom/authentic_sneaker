@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from './Components/Navbar/Navbar';
-import Cart from './Components/Pages/Cart';
-import Login from './Components/Pages/Login';
-import Signup from './Components/Pages/Signup';
-import Product from './Components/Pages/Product';
-import Shop from './Components/Pages/Shop';
-import Checkout from './Components/Pages/Checkout';
+import Navbar from "./Components/Navbar/Navbar";
+import Cart from "./Components/Pages/Cart";
+import Login from "./Components/Pages/Login";
+import Signup from "./Components/Pages/Signup";
+import Product from "./Components/Pages/Product";
+import Shop from "./Components/Pages/Shop";
+import Checkout from "./Components/Pages/Checkout";
 import Men from "./Components/Pages/Men";
 import Women from "./Components/Pages/Women";
 import Kids from "./Components/Pages/Kids";
 import Hero from "./Components/Hero";
-import './index.css';
 import Home from "./Components/Pages/Home";
+
 import AdminPage from "./Components/Pages/AdminPage";
+import AdminLogin from "./Components/Pages/AdminLogin";
+import PrivateRoute from "./Components/Pages/PrivateRoute";
+
+import "./index.css";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -41,7 +45,19 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/admin" element={<AdminPage />} />
+
+        {/* Admin login page */}
+        <Route path="/admin-login" element={<AdminLogin />} />
+
+        {/* Protected admin page */}
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute>
+              <AdminPage />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
