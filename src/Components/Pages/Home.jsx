@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Offers from "../Offers"; // Path is correct if both are in same folder
+import Offers from "../Offers"; 
 
 const Home = () => {
   const [showOffer, setShowOffer] = useState(false);

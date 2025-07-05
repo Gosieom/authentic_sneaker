@@ -14,10 +14,6 @@ import Kids from "./Components/Pages/Kids";
 import Hero from "./Components/Hero";
 import Home from "./Components/Pages/Home";
 
-import AdminPage from "./Components/Pages/AdminPage";
-import AdminLogin from "./Components/Pages/AdminLogin";
-import PrivateRoute from "./Components/Pages/PrivateRoute";
-
 import "./index.css";
 
 function App() {
@@ -45,19 +41,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/checkout" element={<Checkout />} />
-
-        {/* Admin login page */}
-        <Route path="/admin-login" element={<AdminLogin />} />
-
-        {/* Protected admin page */}
-        <Route
-          path="/admin"
-          element={
-            <PrivateRoute>
-              <AdminPage />
-            </PrivateRoute>
-          }
-        />
+        
+        
       </Routes>
     </BrowserRouter>
   );

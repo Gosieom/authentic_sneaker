@@ -76,7 +76,6 @@ const Navbar = ({ cartCount = 0 }) => {
               Kids
             </Link>
           </li>
-          {/* New Admin Link Added Here */}
           <li>
             <Link to="/admin" className={isActive('/admin') ? 'text-blue-600' : 'hover:text-blue-500'}>
               Admin
