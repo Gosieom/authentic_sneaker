@@ -14,6 +14,7 @@ import Kids from "./Components/Pages/Kids";
 import Hero from "./Components/Hero";
 import './index.css';
 import Home from "./Components/Pages/Home";
+import AdminPage from "./Components/Pages/AdminPage";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -40,6 +41,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>
   );
